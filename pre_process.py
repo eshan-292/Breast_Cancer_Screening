@@ -34,7 +34,7 @@ def preprocess_coco_annotations(annotations_file, image_dir, target_size):
             bbox = anno['bbox']
             bbox_annotations.append([anno['category_id'], bbox])
         
-        image_data.append({'image': image, 'annotations': bbox_annotations})
+        image_data.append({'image': image, 'image_id': image_id, 'annotations': bbox_annotations})
     
     return image_data
 
@@ -68,7 +68,7 @@ def preprocess_yolo_annotations(image_dir, label_dir, target_size):
                 y2 = int((y_center + height / 2) * target_size[0])
                 annotations.append([class_label, [x1, y1, x2, y2]])
         
-        image_data.append({'image': image, 'annotations': annotations})
+        image_data.append({'image': image, 'image_name': os.path.basename(img_path), 'annotations': annotations})
     
     return image_data
 
