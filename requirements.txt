@@ -1,0 +1,15 @@
+matplotlib
+numpy
+pandas
+opencv-python
+Pillow
+scipy
+torch
+torchvision
+tqdm
+lightning
+pycocotools
+ultralytics
+scikit-learn
+transformers
+ttach
